@@ -1,8 +1,9 @@
 fastapi
-uvicorn
-sqlalchemy
+uvicorn[standard]
+sqlalchemy>=2.0
 psycopg2-binary
 requests
 apscheduler
 python-multipart
 python-dotenv
+pydantic-settings>=2.0
