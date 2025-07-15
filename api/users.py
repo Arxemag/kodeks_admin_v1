@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from models.user import UserCreateUpdate, UserResponse
 from services import user_service
 
-router = APIRouter(prefix="/users", tags=["users"])
+router = APIRouter(prefix="", tags=["users"])
 
 @router.post(
     "/users",

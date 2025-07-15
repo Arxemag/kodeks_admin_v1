@@ -6,7 +6,7 @@ from services.auth_service import AuthService
 from models.auth import AuthRequest, AuthResponse
 
 router = APIRouter(
-    prefix="/auth",
+    prefix="",
     tags=["Авторизация"],
     responses={404: {"description": "Ресурс не найден"}},
 )
