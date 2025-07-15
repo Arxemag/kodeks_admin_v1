@@ -5,24 +5,10 @@ services:
     build: .
     container_name: kodeks_admin_app
     ports:
-      - "8080:8080"
-    env_file:
-      - .env
-    depends_on:
-      - db
+      - "8000:8000"  # FastAPI на 8000 порту
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:admin@host.docker.internal:5432/kodeks_admin
     volumes:
       - .:/app
-
-  db:
-    image: postgres:17
-    container_name: kodeks_admin_db
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: kodeks_admin
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-
-volumes:
-  pgdata:
+    working_dir: /app
+    restart: unless-stopped

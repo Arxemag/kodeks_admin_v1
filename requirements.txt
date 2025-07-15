@@ -7,3 +7,5 @@ apscheduler
 python-multipart
 python-dotenv
 pydantic-settings>=2.0
+asyncpg
+httpx
